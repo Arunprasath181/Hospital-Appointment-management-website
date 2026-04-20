@@ -1,0 +1,952 @@
+/* ══════════════════════════════════════════════════
+   Dashboard — Premium Styles
+   ══════════════════════════════════════════════════ */
+
+.booking-date-picker {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+/* Ensure global date inputs in forms are also visible */
+input[type="date"] {
+    color: #000000 !important;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 24px 40px;
+    animation: fadeInUp 0.4s var(--ease) both;
+}
+
+/* ── Header ── */
+.dashboard-header {
+    margin-bottom: 28px;
+}
+
+.dashboard-header h2 {
+    color: var(--text-main);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 18px;
+    background: var(--gradient-dark);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Tab Bar ── */
+.tab-bar {
+    display: flex;
+    gap: 4px;
+    background: rgba(15, 23, 42, 0.04);
+    padding: 5px;
+    border-radius: var(--radius-lg);
+    width: fit-content;
+    border: 1px solid var(--border);
+}
+
+.tab {
+    padding: 9px 22px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent;
+    transition: all var(--transition);
+    letter-spacing: 0.2px;
+}
+
+.tab:hover {
+    color: var(--text-secondary);
+    background: rgba(13, 148, 136, 0.06);
+}
+
+.tab.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    border: 1px solid var(--border);
+}
+
+/* ── Messages ── */
+.dash-message {
+    background: var(--success-bg);
+    color: var(--success);
+    padding: 12px 18px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    animation: fadeInUp 0.3s var(--ease) both;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── Sections ── */
+.dash-section {
+    margin-bottom: 28px;
+    animation: fadeInUp 0.4s var(--ease) both;
+}
+
+.dash-section h3 {
+    margin-bottom: 18px;
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.3px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.section-header h3 {
+    margin-bottom: 0 !important;
+}
+
+/* ── Form Cards ── */
+.form-card {
+    padding: 28px;
+    margin-bottom: 24px;
+    border-radius: var(--radius-lg);
+}
+
+.form-card h4 {
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b !important;
+    letter-spacing: 0.2px;
+    opacity: 1 !important;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1;
+    color: #000000 !important;
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    background: #ffffff !important;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+/* ── Doctor Cards Grid ── */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.doctor-card {
+    text-align: center;
+    padding: 28px 20px;
+    transition: all var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.doctor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.doctor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-hover);
+}
+
+.doctor-card:hover::before {
+    opacity: 1;
+}
+
+.doctor-photo img {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 14px;
+    border: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        var(--gradient-primary) border-box;
+    transition: all var(--transition);
+}
+
+.doctor-card:hover .doctor-photo img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px var(--primary-glow);
+}
+
+.photo-placeholder {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 14px;
+    color: var(--primary);
+    border: 2px solid var(--border);
+    transition: all var(--transition);
+}
+
+.doctor-card:hover .photo-placeholder {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
+    border-color: var(--border-hover);
+}
+
+.doctor-card h4 {
+    color: var(--text-main);
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.specialization {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.experience {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ── Data Tables ── */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 18px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.data-table th {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.03) 0%, rgba(15, 23, 42, 0.06) 100%);
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    border-bottom: 2px solid var(--border);
+}
+
+.data-table td {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    color: var(--text-secondary);
+}
+
+.data-table tbody tr {
+    transition: all var(--transition-fast);
+}
+
+.data-table tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── Stats Cards ── */
+.stats-card {
+    padding: 0;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+/* ── Empty State ── */
+.empty-state {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 48px;
+    font-size: 14px;
+    grid-column: 1 / -1;
+    background: rgba(15, 23, 42, 0.02);
+    border-radius: var(--radius);
+    border: 1px dashed var(--border);
+}
+
+/* ── Slot Grid ── */
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.slot-btn {
+    padding: 10px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: white;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.slot-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(13, 148, 136, 0.05);
+    transform: translateY(-1px);
+}
+
+.slot-btn.selected {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 2px 12px var(--primary-glow);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Patient Info Badges ── */
+.patient-info {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.info-badge {
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(14, 165, 233, 0.08) 100%);
+    color: var(--primary-dark);
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(13, 148, 136, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ── Appointment Cards ── */
+.appointment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.appointment-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+}
+
+.appointment-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient-primary);
+    border-radius: 0 2px 2px 0;
+}
+
+.appointment-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+}
+
+.appt-date {
+    text-align: center;
+    min-width: 60px;
+    padding: 8px;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(13, 148, 136, 0.02) 100%);
+    border-radius: var(--radius);
+}
+
+.appt-date .day {
+    font-size: 26px;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.appt-date .month {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.appt-info {
+    flex: 1;
+}
+
+.appt-info h4 {
+    margin-bottom: 4px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.appt-info p {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ── Status Badges ── */
+.status-badge {
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.booked {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(52, 211, 153, 0.12) 100%);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.status-badge.completed {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(129, 140, 248, 0.12) 100%);
+    color: #4f46e5;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.status-badge.cancelled {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(248, 113, 113, 0.12) 100%);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tab-bar {
+        flex-wrap: wrap;
+    }
+
+    .dashboard {
+        padding: 16px 12px 32px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 22px;
+    }
+}
+
+/* ══════════════════════════════════════════════════
+   Doctor Profile Enhancements
+   ══════════════════════════════════════════════════ */
+
+.profile-full-card {
+    padding: 36px;
+    border-radius: var(--radius-xl);
+}
+
+.profile-header-main {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+    align-items: flex-start;
+}
+
+.profile-info-main {
+    flex: 1;
+}
+
+.profile-info-main h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.specialization-large {
+    font-size: 18px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.profile-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.profile-details-section {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+}
+
+.profile-details-section h4 {
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.about-text {
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.photo-upload {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.btn-text {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.btn-text:hover {
+    background: rgba(13, 148, 136, 0.08);
+    color: var(--primary-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 14px;
+    transition: all var(--transition);
+    background: #ffffff;
+    color: #000000;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+    background: white;
+}
+
+.static-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-main);
+    padding: 4px 0;
+}
+
+/* ══════════════════════════════════════════════════
+   Toggle Switch
+   ══════════════════════════════════════════════════ */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(148, 163, 184, 0.3);
+    transition: all 0.4s var(--ease);
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: all 0.4s var(--ease-bounce);
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+input:checked+.slider {
+    background: var(--gradient-primary);
+    box-shadow: 0 0 8px var(--primary-glow);
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+/* ── Time Input Groups ── */
+.time-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time-display-12h {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ── Secondary Button (Dashboard context) ── */
+.btn-secondary {
+    background: rgba(13, 148, 136, 0.08);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 13px;
+    white-space: nowrap;
+    border: 1.5px solid rgba(13, 148, 136, 0.2);
+    transition: all var(--transition);
+}
+
+.btn-secondary:hover {
+    background: rgba(13, 148, 136, 0.15);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+/* ── Centered Profile Layout (opt-in via JSX) ── */
+.profile-centered .form-card,
+.profile-centered .profile-full-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-centered .section-header {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ══════════════════════════════════════════════════
+   Stats Grid — Booking Cards
+   ══════════════════════════════════════════════════ */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.stat-card-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.12) 0%, rgba(14, 165, 233, 0.12) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.stat-details h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════════
+   User Category Sections
+   ══════════════════════════════════════════════════ */
+
+.user-category {
+    margin-bottom: 28px;
+}
+
+.user-category h3 {
+    margin-bottom: 14px;
+    font-size: 18px;
+}
+
+/* ══════════════════════════════════════════════════
+   Doctor Card Actions
+   ══════════════════════════════════════════════════ */
+
+.doctor-card-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+}
+
+.btn-danger-text {
+    color: #ef4444 !important;
+}
+
+.btn-danger-text:hover {
+    background: rgba(239, 68, 68, 0.08) !important;
+    color: #dc2626 !important;
+}
+
+/* ══════════════════════════════════════════════════
+   Input Fixes — date & select always visible
+   ══════════════════════════════════════════════════ */
+
+input[type="date"],
+input[type="time"] {
+    color-scheme: light;
+    width: 100%;
+    min-height: 42px;
+}
+
+/* ══════════════════════════════════════════════════
+   Patient Profile Layout
+   ══════════════════════════════════════════════════ */
+
+.patient-profile-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px;
+    border-radius: var(--radius-xl);
+}
+
+.patient-profile-card .form-group {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.patient-profile-card .form-group:last-of-type {
+    border-bottom: none;
+    margin-bottom: 8px;
+}
+
+.patient-profile-card .form-group label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted) !important;
+    margin-bottom: 8px;
+}
+
+.patient-profile-card .static-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    padding: 4px 0;
+}
+
+.patient-profile-card textarea {
+    background: #ffffff;
+    color: #000000;
+    border: 1.5px solid #cbd5e1;
+    border-radius: var(--radius);
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+    font-family: inherit;
+}
+
+.patient-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ══════════════════════════════════════════════════
+   Custom Confirmation Modal
+   ══════════════════════════════════════════════════ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.confirm-modal {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+    transform: scale(0.95);
+    animation: modalIn 0.3s var(--ease-bounce) forwards;
+}
+
+@keyframes modalIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.modal-icon {
+    font-size: 24px;
+    color: #ef4444;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.modal-body p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-danger {
+    background: #ef4444 !important;
+    border-color: #ef4444 !important;
+}
+
+.btn-danger:hover {
+    background: #dc2626 !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
